@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+
+}
+
+
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/background.png);
+    font-family: 'JetBrains Mono';
+    font-size: 20px;
+}
+
+.cardPergunta{
+    background-color: rgb(0, 0, 36);
+    color: antiquewhite;
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.radioContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.radioContainer > div{
+
+    background-color: antiquewhite;
+    color: rgb(0, 0, 36);
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.radioContainer > div > span{
+    margin-left: 20px;
+}
+
+.imgDialogo > img{
+    width: 400px;
+}
+
+.boxDialogo{
+    background-color: antiquewhite;
+    color: rgb(0, 0, 36);
+}

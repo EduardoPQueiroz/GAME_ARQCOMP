@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <div class="mainContainer">
+        <div class="dialogoContainer">
+            <div class="boxDialogo">
+                <p id="dialogo">
+                
+                </p>
+            </div>
+            <div class="imgDialogo">
+                <img src="img/mascote.png" alt="">
+            </div>
+        </div>
+        <button onclick="exibirDialogo(incrementar())">AVANÇAR</button>
+        <!-- <div class="cardPergunta" style="display: ;">
+            <p>Pergunta tal tal tal</p>
+            <div class="radioContainer">
+                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
+            </div>
+            <button>Enviar Resposta</button>
+        </div> -->
+    </div>
+</body>
+
+</html>
+<script>
+    let dialogos = ['Olá tudo bem?', 'Me chamo Du, vou ser seu guia']
+
+    let i = 0
+    function exibirDialogo(i){
+        dialogo.innerHTML = dialogos[i]
+    }
+
+    function incrementar(){
+        return i++
+    }
+
+</script>
