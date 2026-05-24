@@ -7,49 +7,228 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
+<body onload="exibirDialogo(0)">
 
 
 
     <div class="mainContainer">
-        <div class="dialogoContainer">
+        <div class="dialogoContainer" id="displayDialogo">
             <div class="boxDialogo">
                 <p id="dialogo">
-                
+
                 </p>
             </div>
-            <div class="imgDialogo">
-                <img src="img/mascote.png" alt="">
+            <div class="imgDialogo" id="imgMascote">
+                <!-- <img src="img/mascote.png" alt=""> -->
             </div>
+            <button onclick="exibirDialogo(incrementar())" class="btnSubmit" id="btnDialogo">AVANÇAR</button>
         </div>
-        <button onclick="exibirDialogo(incrementar())">AVANÇAR</button>
-        <!-- <div class="cardPergunta" style="display: ;">
-            <p>Pergunta tal tal tal</p>
+        <div class="cardPergunta" id="displayQuestion" style="display: none;">
+            <p id="questao">Pergunta tal tal tal</p>
             <div class="radioContainer">
-                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
-                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
-                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
-                <div><input type="radio" value="" name="pergunta"><span>Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span id="opt1">Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span id="opt2">Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span id="opt3">Opção</span></div>
+                <div><input type="radio" value="" name="pergunta"><span id="opt4">Opção</span></div>
             </div>
-            <button>Enviar Resposta</button>
-        </div> -->
+            <button class="btnSubmit">Enviar Resposta</button>
+        </div>
     </div>
 </body>
 
 </html>
 <script>
-    let dialogos = ['Olá tudo bem?', 'Me chamo Du, vou ser seu guia']
+    let dialogos = ['Olá tudo bem?', 'Me chamo Du, vou ser seu guia na sua aventura em Tópicos de Arquitetura Computacional', 'Sua missão será responder a um total de 16 perguntas sobre tópicos de arquitetura computacional, mas cuidado, toda vez que você errar, vamos ter que começar tudo de novo! Está preparado?']
 
-    let i = 0
-    function exibirDialogo(i){
-        dialogo.innerHTML = dialogos[i]
+    let perguntas = [
+        {
+            'questao': '1. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '2. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '3. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '4. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '5. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '6. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '7. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '8. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '9. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '10. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '11. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '12. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '13. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '14. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '15. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        },
+        {
+            'questao': '16. Pergunta interessante',
+            'alternativas': [
+                'Opção A',
+                'Opção B',
+                'Opção C',
+                'Opção D'
+            ]
+        }
+    ]
+
+
+    function exibirPergunta(j) {
+        displayQuestion.style.display = 'flex'
+        questao.innerHTML = perguntas[j]['questao']
+        opt1.innerHTML = perguntas[j]['alternativas'][0]
+        opt2.innerHTML = perguntas[j]['alternativas'][1]
+        opt3.innerHTML = perguntas[j]['alternativas'][2]
+        opt4.innerHTML = perguntas[j]['alternativas'][3]
     }
 
-    function incrementar(){
+    let i = 1
+    function exibirDialogo(i) {
+        displayDialogo = document.getElementById('displayDialogo')
+        displayQuestion = document.getElementById('displayQuestion')
+
+
+        dialogo.innerHTML = dialogos[i]
+        if (i == 0) {
+            btnDialogo.innerHTML = 'Olá!'
+            imgMascote.innerHTML = `<img src="img/poseFelizDialogo.png" alt="">`
+        }
+        if (i == 1) {
+            btnDialogo.innerHTML = 'Beleza!'
+            imgMascote.innerHTML = `<img src="img/poseDialogo2.png" alt="">`
+        }
+        if (i == 2) {
+            btnDialogo.innerHTML = 'Vamos lá!'
+            imgMascote.innerHTML = `<img src="img/mascote.png" alt="">`
+        }
+        if (i > dialogos.length - 1) {
+            displayDialogo.style.display = 'none'
+            exibirPergunta(0)
+        }
+    }
+
+    function incrementar() {
         return i++
     }
 
