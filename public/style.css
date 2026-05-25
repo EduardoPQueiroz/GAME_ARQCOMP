@@ -25,6 +25,11 @@
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
+    font-size: 18px;
+}
+
+.containerPergunta{
+    width: 80%;
 }
 
 .radioContainer{
@@ -81,4 +86,22 @@
     background-color: rgb(1, 1, 219);
     color: white;
     border: solid 3px white;
+}
+
+.classMascoteErro{
+    position: fixed;
+    left: 0;
+    margin-left: 10px;
+}
+
+#boxErro{
+    width: 250px;
+}
+
+#vitoriaImg > img{
+    width: 200px;
+}
+
+#vitoriaText{
+    width: 180px;
 }

@@ -30,14 +30,30 @@
             <button onclick="exibirDialogo(incrementar())" class="btnSubmit" id="btnDialogo">AVANÇAR</button>
         </div>
         <div class="cardPergunta" id="displayQuestion" style="display: none;">
-            <p id="questao">Pergunta tal tal tal</p>
-            <div class="radioContainer">
-                <div><input type="radio" value="" name="pergunta"><span id="opt1">Opção</span></div>
-                <div><input type="radio" value="" name="pergunta"><span id="opt2">Opção</span></div>
-                <div><input type="radio" value="" name="pergunta"><span id="opt3">Opção</span></div>
-                <div><input type="radio" value="" name="pergunta"><span id="opt4">Opção</span></div>
+            <div class="containerPergunta">
+                <p id="questao">Pergunta tal tal tal</p>
             </div>
-            <button class="btnSubmit">Enviar Resposta</button>
+            <div class="radioContainer">
+                <div><input type="radio" value="1" name="pergunta"><span id="opt1">Opção</span></div>
+                <div><input type="radio" value="2" name="pergunta"><span id="opt2">Opção</span></div>
+                <div><input type="radio" value="3" name="pergunta"><span id="opt3">Opção</span></div>
+                <div><input type="radio" value="4" name="pergunta"><span id="opt4">Opção</span></div>
+            </div>
+            <button class="btnSubmit" onclick="exibirPergunta(incrementarPergunta())">Enviar Resposta</button>
+        </div>
+        <div class="classMascoteErro" id="mascoteErro" style="display: none;">
+            <p class="boxDialogo" id="boxErro"></p>
+            <div id="divImgErro">
+
+            </div>
+        </div>
+        <div id="vitoria" style="display: none;">
+            <p class="boxDialogo" id="vitoriaText">
+                Texto exemplo
+            </p>
+            <div id="vitoriaImg">
+                <img src="img/posesVitoria.png" alt="">
+            </div>
         </div>
     </div>
 </body>
@@ -45,13 +61,178 @@
 </html>
 <script src="dados.js"></script>
 <script>
+
+
+    let j = 0
+
+    function incrementarPergunta() {
+        if (verificarResposta(j) == true) {
+            return j = j + 1
+        } else {
+            return j = 0
+        }
+    }
+
+    function verificarResposta(j) {
+        let selector = document.querySelector('input[name="pergunta"]:checked').value;
+        let respostaCerta = false
+        if (j == 0) {
+            if (selector == 2) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 1) {
+            if (selector == 3) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 2) {
+            if (selector == 1) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 3) {
+            if (selector == 4) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 4) {
+            if (selector == 2) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 5) {
+            if (selector == 3) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 6) {
+            if (selector == 1) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 7) {
+            if (selector == 4) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 8) {
+            if (selector == 4) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 9) {
+            if (selector == 3) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 10) {
+            if (selector == 2) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 11) {
+            if (selector == 1) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 12) {
+            if (selector == 3) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 13) {
+            if (selector == 4) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 14) {
+            if (selector == 2) {
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+        if (j == 15) {
+            if (selector == 1) {
+                displayQuestion.style.display = 'none'
+                exibirVitoria()
+                respostaCerta = true
+                return respostaCerta
+            } else {
+                setTimeout(exibirErro(), 1000)
+                return respostaCerta
+            }
+        }
+    }
+
     function exibirPergunta(j) {
-        displayQuestion.style.display = 'flex'
-        questao.innerHTML = perguntas[j]['questao']
-        opt1.innerHTML = perguntas[j]['alternativas'][0]
-        opt2.innerHTML = perguntas[j]['alternativas'][1]
-        opt3.innerHTML = perguntas[j]['alternativas'][2]
-        opt4.innerHTML = perguntas[j]['alternativas'][3]
+        if(j < perguntas.length){
+            displayQuestion.style.display = 'flex'
+            questao.innerHTML = perguntas[j]['questao']
+            opt1.innerHTML = perguntas[j]['alternativas'][0]
+            opt2.innerHTML = perguntas[j]['alternativas'][1]
+            opt3.innerHTML = perguntas[j]['alternativas'][2]
+            opt4.innerHTML = perguntas[j]['alternativas'][3]
+        }        
     }
 
     let i = 1
@@ -82,5 +263,35 @@
     function incrementar() {
         return i++
     }
+
+    function exibirErro() {
+        divErro = document.getElementById('mascoteErro')
+        let random = Math.random() * (2 - 0) + 0
+
+        divImgErro.innerHTML = imgsErro[random.toFixed(0)]
+        boxErro.innerHTML = textosErro[random.toFixed(0)]
+        divErro.style.display = 'block'
+        setTimeout(sumirErro, 1500)
+    }
+
+    function sumirErro() {
+        mascoteErro.style.display = 'none'
+
+    }
+
+    function sumirPerguntas() {
+        displayQuestion.style.display = 'none'
+    }
+
+    function exibirVitoria() {
+        displayQuestion.style.display = 'none'
+
+        vitoria.style.display = 'block'
+
+
+        vitoriaText.innerHTML = 'Finalmente, você provou que é muito bom em tópicos de arquitetura computacional!!!'
+        vitoriaImg.innerHTML = `<img src="img/posesVitoria.png" alt="">`
+    }
+
 
 </script>
